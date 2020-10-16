@@ -1,0 +1,16 @@
+# O esse consiste no trabalho xxx de Metodos de programação, 
+que visa fazer uma pilha com suas principais funcionalidades.
+Implementado em C.
+
+O intuito do trabalho é aplicar conhecimentos adiquiridos na
+materia, métodos de programação, como programação orientada a
+teste, utilização de gerenciador de versões, documentação, entre
+outros aspectos.
+
+# Utilização do makefile
+
+- make all          # executar o make
+
+- ./printy          # executar o programa
+
+- make clean        # limpa os arquivo .o
