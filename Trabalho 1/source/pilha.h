@@ -1,6 +1,23 @@
-#ifndef _H_TESTE
-#define _H_TESTE
+#ifndef PILHA_H
+#define PILHA_H
+ 
+#include <cstdlib>
+#include <iostream>
+ 
+class bloco{
+  public:
+    bloco();
+    int item;
+    bloco * anterior;
+};
 
-void helloWorld(void);
+class pilha{
+  private:
+    bloco * blocoTopo;
+  public:
+    pilha(); 
+    bool push(int valor);
 
-#endif
+};
+ 
+#endif // PILHA_H
