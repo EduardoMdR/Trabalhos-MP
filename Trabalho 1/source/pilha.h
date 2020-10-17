@@ -5,21 +5,24 @@
 #include <iostream>
 
 #define SIZE 10
+#define ItemType int
  
 class Pilha{
   private:
-    int num[SIZE];  // defini o tamanho padao da pilha como 10
+    ItemType num[SIZE];  // defini o tamanho padao da pilha como 10
     int top;
+    Pilha * anterior;
   public:
     Pilha();    //defualt constructor
-    int push(int);
-    int pop();
-    int isEmpty();
-    int isFull();
-    int topo();
+    ItemType push(ItemType);
+    ItemType pop();
+    bool isEmpty();
+    bool isFull();
+    ItemType topo();
     int tamanho();
     // int setSize();
     void displayItems();
+    ~Pilha();
 };
  
 #endif // PILHA_H

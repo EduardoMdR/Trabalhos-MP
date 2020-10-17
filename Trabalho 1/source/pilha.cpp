@@ -6,7 +6,7 @@ Pilha::Pilha(){
     top=-1;
 }
 
-int Pilha::push(int n){
+ItemType Pilha::push(ItemType n){
     // preciso verificar se a pilha está cheia
     if(isFull()){
         return 0;
@@ -16,8 +16,8 @@ int Pilha::push(int n){
     return n;
 }
 
-int Pilha::pop(){
-    int temp;   // variavel temporaria
+ItemType Pilha::pop(){
+    ItemType temp;   // variavel temporaria
     // verifica se a pilha está vazia
     if(isEmpty())
         return 0;
@@ -26,14 +26,14 @@ int Pilha::pop(){
     return temp;
 }
 
-int Pilha::isEmpty(){
+bool Pilha::isEmpty(){
     if(top==-1)
         return 1;
     else
         return 0;   
 }
 
-int Pilha::isFull(){
+bool Pilha::isFull(){
     if(top==(SIZE-1))
         return 1;
     else
@@ -50,7 +50,7 @@ void Pilha::displayItems(){
     cout << endl;
 }
 
-int Pilha::topo(){
+ItemType Pilha::topo(){
     int temp;   // variavel temporaria
     // verifica se a pilha está vazia
     if(isEmpty())
@@ -68,3 +68,8 @@ int Pilha::tamanho(){
         temp = temp + 1;
     return temp;
 }
+
+Pilha::~Pilha(){
+    // delete top;
+}
+

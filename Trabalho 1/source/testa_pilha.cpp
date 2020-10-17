@@ -2,6 +2,8 @@
 #include "pilha.h"
 // #include "gtest/gtest.h"
 
+#define ItemType int
+
 using namespace std;
 
 // Desenvolvimento orientado a teste
@@ -78,7 +80,8 @@ int main()
   cout << " Pilha criada " << endl;
   Pilha teste;
 
-  int operacao, valor, temp;
+  int operacao;
+  ItemType valor, temp;
   do {
     cout << "-----------------------------" << endl;
     cout << " 1 - Adicionar Elemento " << endl;
