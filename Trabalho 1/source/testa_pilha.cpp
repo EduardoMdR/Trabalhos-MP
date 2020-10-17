@@ -5,7 +5,7 @@
 using namespace std;
 
 // Desenvolvimento orientado a teste
-// TEST(Pilha, testPushAndGet)
+// TEST(Pilha, testPushAndPop)
 // {
 //     int name = 9;
 
@@ -15,37 +15,57 @@ using namespace std;
 //     EXPECT_EQ(valor->pop(), name);
 // }
 
+
+// TEST (Pilha, testTopo)
+// {
+//   Pilha *valor = new Pilha();
+//   EXPECT_EQ(valor->topo(), 0);
+
+//   for (int i = 0; i < 10; i++) {
+//     valor->push(i);
+//     EXPECT_EQ(valor->topo(), i);
+//   }
+// }
+
+
+// TEST (Pilha, testSize)
+// {
+//   Pilha *valor = new Pilha();
+//   EXPECT_EQ(valor->tamanho(), 0);
+
+//   for (int i = 1; i <= 10; i++) {
+//     valor->push(i);
+//     EXPECT_EQ(valor->tamanho(), i);
+//   }
+//   temp = valor->pop();
+//   i--;
+//   EXPECT_EQ(valor->tamanho(), i);
+// }
+
+
 // TEST (Pilha, testIsEmpty)
 // {
 //   int temp, temp2;
 //   Pilha *valor = new Pilha();
-//   temp = valor->isEmpty();
+//   EXPECT_EQ(valor->isEmpty(), 1;
 
 //   valor->push(2);
-
-//   temp2 = valor->isEmpty();
-
-//   EXPECT_EQ(temp, 1;
-//   EXPECT_EQ(temp2, 0);
-
+//   EXPECT_EQ(valor->isEmpty(), 0);
 // }
+
 
 // TEST (Pilha, testIsFull)
 // {
 //   int temp, temp2;
 //   Pilha *valor = new Pilha();
-//   temp = valor->isFull();
+//   EXPECT_EQ(valor->isFull(), 0);
 
 // for (int i = 0; i < 10; i++) {
 //   valor->push(i);
 // }
-
-//   temp2 = valor->isFull();
-
-//   EXPECT_EQ(temp, 1;
-//   EXPECT_EQ(temp2, 0);
-
+//   EXPECT_EQ(valor->isFull(), 1);
 // }
+
 
 // int main(int argc, char **argv)
 // {
@@ -68,6 +88,7 @@ int main()
     cout << " 5 - Mudar tamanho da pilha " << endl;
     cout << " 6 - Pilha está cheia? " << endl;
     cout << " 7 - Pilha está vazia?  " << endl;
+    cout << " 8 - Mostrar pilha  " << endl;
     cout << " 0 - Finalizar operação (destruir pilha)" << endl;
     cout << "-----------------------------" << endl;
     cin >> operacao;
@@ -90,19 +111,26 @@ int main()
           cout<<"A pilha está vazia!! \n"<<endl;
         else
           cout  << "Número " << temp << " retirado da lista.\n\n" << endl;
-
       break;
 
       case 3 :
-        cout << "Top" << endl;
+        temp=teste.topo();
+        if(temp==0)
+          cout<<"A pilha está vazia!! \n"<<endl;
+        else
+          cout  << "Número no topo de sua lista é : " << temp << endl;
       break;
 
       case 4 :
-        cout << "Size" << endl;
+        temp=teste.tamanho();
+        if(temp==0)
+          cout<<"A pilha está vazia!! \n"<<endl;
+        else
+          cout  << "O tamanho de sua pilha é de : " << temp << endl;
       break;
 
       case 5 :
-        cout << "SetSize" << endl;
+        // setSize
       break;
 
       case 6 :
@@ -117,6 +145,13 @@ int main()
           cout<<"A Pilha está vazia.\n\n"<<endl;
         else
           cout<<"A Pilha não está vazia.\n\n"<<endl;
+      break;
+
+      case 8 :
+        if (teste.isEmpty())
+          cout<<"A Pilha está vazia.\n\n"<<endl;
+        else
+          teste.displayItems();
       break;
 
       default :

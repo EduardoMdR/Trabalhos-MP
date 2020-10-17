@@ -16,10 +16,10 @@ class Pilha{
     int pop();
     int isEmpty();
     int isFull();
-    // int top();
-    // int size();
+    int topo();
+    int tamanho();
     // int setSize();
-    // void displayItems();
+    void displayItems();
 };
  
 #endif // PILHA_H
