@@ -4,20 +4,18 @@
 #include <cstdlib>
 #include <iostream>
  
-class bloco{
-  public:
-    bloco();
-    int item;
-    bloco * anterior;
-};
 
-class pilha{
+class Pilha{
   private:
-    bloco * blocoTopo;
+    int num[10];  // defini o tamanho padao da pilha como 10
+    int top;
   public:
-    pilha(); 
-    bool push(int valor);
-
+    Pilha();    //defualt constructor
+    int push(int);
+    int pop();
+    // int isEmpty();
+    // int isFull();
+    // void displayItems();
 };
  
 #endif // PILHA_H

@@ -1,13 +1,32 @@
 #include <iostream>
 #include "pilha.h"
+// #include "gtest/gtest.h"
+
 using namespace std;
- 
-int main(){
 
+// Desenvolvimento orientado a teste
+// TEST(Pilha, testPushAndGet)
+// {
+//     int name = 9;
+
+//     Pilha *valor = new Pilha();
+//     valor->push(name);
+
+//     EXPECT_EQ(valor->pop(), name);
+// }
+
+// int main(int argc, char **argv)
+// {
+//     testing::InitGoogleTest(&argc, argv);
+//     return RUN_ALL_TESTS();
+// }
+
+int main()
+{
   cout << " Pilha criada " << endl;
-  pilha teste;
+  Pilha teste;
 
-  int operacao, valor;
+  int operacao, valor, temp;
   do {
     cout << "-----------------------------" << endl;
     cout << " 1 - Adicionar Elemento " << endl;
@@ -22,13 +41,23 @@ int main(){
     cin >> operacao;
     switch(operacao) {
       case 1 :
-        cout << "Push" << endl; 
+        cout<<"Digite o número que queira inserir na pilha: \n";
         cin >> valor;
-        // if(teste.push(valor)) cout << "O valor " << valor << " foi inserido com sucesso!\n\n";
-        //   else cout << "O valor não pode ser inserido!\n\n";
+
+        temp = teste.push(valor);
+        if(temp==0)
+          cout<<"A Pilha está cheia.\n\n"<<endl;
+        else
+          cout  << "Número " << temp << " inserido com sucesso.\n\n" << endl;
       break;
       case 2 :
         cout << "Pop" << endl;
+        temp=teste.pop();
+        if(temp==0)
+          cout<<"A pilha está vazia!! \n"<<endl;
+        else
+          cout  << "Número " << temp << " retirado da lista.\n\n" << endl;
+
       break;
       case 3 :
         cout << "Top" << endl;
