@@ -6,22 +6,35 @@ Pilha::Pilha(){
 }
 
 int Pilha::push(int n){
-    // preciso verificar se a pilha está cheia (ainda n fiz)
-    // if(isFull()){
-    //     return 0;
-    // }
+    // preciso verificar se a pilha está cheia
+    if(isFull()){
+        return 0;
+    }
     ++top;
     num[top]=n;
     return n;
 }
 
 int Pilha::pop(){
-    // variavel temporaria
-    int temp;
+    int temp;   // variavel temporaria
     // verifica se a pilha está vazia
-    // if(isEmpty())
-    //     return 0;
+    if(isEmpty())
+        return 0;
     temp = num[top];
     --top;
     return temp;
+}
+
+int Pilha::isEmpty(){
+    if(top==-1)
+        return 1;
+    else
+        return 0;   
+}
+
+int Pilha::isFull(){
+    if(top==(SIZE-1))
+        return 1;
+    else
+        return 0;
 }

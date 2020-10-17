@@ -15,6 +15,38 @@ using namespace std;
 //     EXPECT_EQ(valor->pop(), name);
 // }
 
+// TEST (Pilha, testIsEmpty)
+// {
+//   int temp, temp2;
+//   Pilha *valor = new Pilha();
+//   temp = valor->isEmpty();
+
+//   valor->push(2);
+
+//   temp2 = valor->isEmpty();
+
+//   EXPECT_EQ(temp, 1;
+//   EXPECT_EQ(temp2, 0);
+
+// }
+
+// TEST (Pilha, testIsFull)
+// {
+//   int temp, temp2;
+//   Pilha *valor = new Pilha();
+//   temp = valor->isFull();
+
+// for (int i = 0; i < 10; i++) {
+//   valor->push(i);
+// }
+
+//   temp2 = valor->isFull();
+
+//   EXPECT_EQ(temp, 1;
+//   EXPECT_EQ(temp2, 0);
+
+// }
+
 // int main(int argc, char **argv)
 // {
 //     testing::InitGoogleTest(&argc, argv);
@@ -40,6 +72,7 @@ int main()
     cout << "-----------------------------" << endl;
     cin >> operacao;
     switch(operacao) {
+
       case 1 :
         cout<<"Digite o número que queira inserir na pilha: \n";
         cin >> valor;
@@ -50,8 +83,8 @@ int main()
         else
           cout  << "Número " << temp << " inserido com sucesso.\n\n" << endl;
       break;
+
       case 2 :
-        cout << "Pop" << endl;
         temp=teste.pop();
         if(temp==0)
           cout<<"A pilha está vazia!! \n"<<endl;
@@ -59,21 +92,33 @@ int main()
           cout  << "Número " << temp << " retirado da lista.\n\n" << endl;
 
       break;
+
       case 3 :
         cout << "Top" << endl;
       break;
+
       case 4 :
         cout << "Size" << endl;
       break;
+
       case 5 :
         cout << "SetSize" << endl;
       break;
+
       case 6 :
-        cout << "IsFull" << endl;
+        if (teste.isFull())
+          cout<<"A Pilha está cheia.\n\n"<<endl;
+        else
+          cout<<"A Pilha não está cheia.\n\n"<<endl;
       break;
+
       case 7 :
-        cout << "IsEmpty" << endl;
+        if (teste.isEmpty())
+          cout<<"A Pilha está vazia.\n\n"<<endl;
+        else
+          cout<<"A Pilha não está vazia.\n\n"<<endl;
       break;
+
       default :
         cout << "Número invalido" << endl;
       }
