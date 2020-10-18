@@ -1,12 +1,13 @@
-#include "pilha.h"
+#include "pilhaVetor.hpp"
+
 using namespace std;
 
 // criando pilha
-Pilha::Pilha(){
+PilhaVetor::PilhaVetor(){
     top=-1;
 }
 
-ItemType Pilha::push(ItemType n){
+ItemType PilhaVetor::push(ItemType n){
     // preciso verificar se a pilha está cheia
     if(isFull()){
         return 0;
@@ -16,7 +17,7 @@ ItemType Pilha::push(ItemType n){
     return n;
 }
 
-ItemType Pilha::pop(){
+ItemType PilhaVetor::pop(){
     ItemType temp;   // variavel temporaria
     // verifica se a pilha está vazia
     if(isEmpty())
@@ -26,21 +27,21 @@ ItemType Pilha::pop(){
     return temp;
 }
 
-bool Pilha::isEmpty(){
+bool PilhaVetor::isEmpty(){
     if(top==-1)
         return 1;
     else
         return 0;   
 }
 
-bool Pilha::isFull(){
+bool PilhaVetor::isFull(){
     if(top==(SIZE-1))
         return 1;
     else
         return 0;
 }
 
-void Pilha::displayItems(){
+void PilhaVetor::displayItems(){
     if(isEmpty())
         cout << "";
     int i; //for loop
@@ -50,8 +51,8 @@ void Pilha::displayItems(){
     cout << endl;
 }
 
-ItemType Pilha::topo(){
-    int temp;   // variavel temporaria
+ItemType PilhaVetor::topo(){
+    ItemType temp;   // variavel temporaria
     // verifica se a pilha está vazia
     if(isEmpty())
         return 0;
@@ -59,7 +60,7 @@ ItemType Pilha::topo(){
     return temp;
 }
 
-int Pilha::tamanho(){
+int PilhaVetor::tamanho(){
     // verifica se a pilha está vazia
     if(isEmpty())
         return 0;
@@ -69,7 +70,7 @@ int Pilha::tamanho(){
     return temp;
 }
 
-Pilha::~Pilha(){
+PilhaVetor::~PilhaVetor(){
     // delete top;
 }
 

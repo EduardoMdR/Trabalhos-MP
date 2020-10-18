@@ -4,16 +4,18 @@
 #include <cstdlib>
 #include <iostream>
 
+using namespace std;
+
 #define SIZE 10
 #define ItemType int
  
-class Pilha{
+class PilhaVetor{
   private:
     ItemType num[SIZE];  // defini o tamanho padao da pilha como 10
     int top;
-    Pilha * anterior;
+    PilhaVetor * anterior;
   public:
-    Pilha();    //defualt constructor
+    PilhaVetor();    //defualt constructor
     ItemType push(ItemType);
     ItemType pop();
     bool isEmpty();
@@ -22,7 +24,7 @@ class Pilha{
     int tamanho();
     // int setSize();
     void displayItems();
-    ~Pilha();
+    ~PilhaVetor();
 };
  
 #endif // PILHA_H

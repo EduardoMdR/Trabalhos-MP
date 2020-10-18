@@ -7,7 +7,7 @@ PROJ_NAME=printy
 C_SOURCE=$(wildcard ./source/*.cpp)
  
 # .h files
-H_SOURCE=$(wildcard ./source/*.h)
+H_SOURCE=$(wildcard ./source/*.hpp)
  
 # Object files
 OBJ=$(subst .cpp,.o,$(subst source,objects,$(C_SOURCE)))
@@ -36,7 +36,7 @@ $(PROJ_NAME): $(OBJ)
 	@ echo 'Finished building binary: $@'
 	@ echo ' '
  
-./objects/%.o: ./source/%.cpp ./source/%.h
+./objects/%.o: ./source/%.cpp ./source/%.hpp
 	@ echo 'Building target using GCC compiler: $<'
 	$(CC) $< $(CC_FLAGS) -o $@
 	@ echo ' '

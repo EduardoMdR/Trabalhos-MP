@@ -1,26 +1,29 @@
 #include <iostream>
-#include "pilha.h"
-// #include "gtest/gtest.h"
+#include "pilhaVetor.hpp"
+#include "pilhaEncadeada.hpp"
 
-#define ItemType int
+#ifndef StackType
+#define StackType PilhaVetor
+#endif //StackType
+// #include "gtest/gtest.h"
 
 using namespace std;
 
 // Desenvolvimento orientado a teste
-// TEST(Pilha, testPushAndPop)
+// TEST(StackType, testPushAndPop)
 // {
 //     int name = 9;
 
-//     Pilha *valor = new Pilha();
+//     StackType *valor = new StackType();
 //     valor->push(name);
 
 //     EXPECT_EQ(valor->pop(), name);
 // }
 
 
-// TEST (Pilha, testTopo)
+// TEST (StackType, testTopo)
 // {
-//   Pilha *valor = new Pilha();
+//   StackType *valor = new StackType();
 //   EXPECT_EQ(valor->topo(), 0);
 
 //   for (int i = 0; i < 10; i++) {
@@ -30,9 +33,9 @@ using namespace std;
 // }
 
 
-// TEST (Pilha, testSize)
+// TEST (StackType, testSize)
 // {
-//   Pilha *valor = new Pilha();
+//   StackType *valor = new StackType();
 //   EXPECT_EQ(valor->tamanho(), 0);
 
 //   for (int i = 1; i <= 10; i++) {
@@ -45,10 +48,10 @@ using namespace std;
 // }
 
 
-// TEST (Pilha, testIsEmpty)
+// TEST (StackType, testIsEmpty)
 // {
 //   int temp, temp2;
-//   Pilha *valor = new Pilha();
+//   StackType *valor = new StackType();
 //   EXPECT_EQ(valor->isEmpty(), 1;
 
 //   valor->push(2);
@@ -56,10 +59,10 @@ using namespace std;
 // }
 
 
-// TEST (Pilha, testIsFull)
+// TEST (StackType, testIsFull)
 // {
 //   int temp, temp2;
-//   Pilha *valor = new Pilha();
+//   StackType *valor = new StackType();
 //   EXPECT_EQ(valor->isFull(), 0);
 
 // for (int i = 0; i < 10; i++) {
@@ -78,7 +81,7 @@ using namespace std;
 int main()
 {
   cout << " Pilha criada " << endl;
-  Pilha teste;
+  StackType teste;
 
   int operacao;
   ItemType valor, temp;
@@ -98,19 +101,20 @@ int main()
     switch(operacao) {
 
       case 1 :
-        cout<<"Digite o número que queira inserir na pilha: \n";
-        cin >> valor;
-
-        temp = teste.push(valor);
-        if(temp==0)
+        if (teste.isFull()){  // Se isEmpty retornar 1, é porque a pilha não tem mais espaço
           cout<<"A Pilha está cheia.\n\n"<<endl;
-        else
+        }else{
+          cout<<"Digite o número que queira inserir na pilha: \n";
+          cin >> valor;
+          temp = teste.push(valor);
+ 
           cout  << "Número " << temp << " inserido com sucesso.\n\n" << endl;
+        }
       break;
 
       case 2 :
         temp=teste.pop();
-        if(temp==0)
+        if (teste.isEmpty())
           cout<<"A pilha está vazia!! \n"<<endl;
         else
           cout  << "Número " << temp << " retirado da lista.\n\n" << endl;
@@ -118,18 +122,19 @@ int main()
 
       case 3 :
         temp=teste.topo();
-        if(temp==0)
+        if (teste.isEmpty())
           cout<<"A pilha está vazia!! \n"<<endl;
         else
           cout  << "Número no topo de sua lista é : " << temp << endl;
       break;
 
       case 4 :
-        temp=teste.tamanho();
-        if(temp==0)
+        int temp2; // vai receber o tamanho da pilha
+        temp2 = teste.tamanho();
+        if (teste.isEmpty())
           cout<<"A pilha está vazia!! \n"<<endl;
         else
-          cout  << "O tamanho de sua pilha é de : " << temp << endl;
+          cout  << "O tamanho de sua pilha é de : " << temp2 << endl;
       break;
 
       case 5 :
