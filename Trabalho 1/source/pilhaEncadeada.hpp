@@ -1,3 +1,14 @@
+/**
+ * @file testa_pilha.cpp
+ * @author Eduardo Marques dos reis (190012358)
+ * @brief 
+ * @version 0.1
+ * @date 2020-10-19
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #ifndef PILHAENCADEADA_H
 #define PILHAENCADEADA_H
  
@@ -18,103 +29,102 @@ using namespace std;
  * @brief Classe Bloco, é utilizada para faciliatar a construção da pilha
  * 
  */
-class bloco{
-public:
+class bloco {
+    public:
 
-/**
- * @brief Construct a new bloco object
- * 
- */
-    bloco();
+    /**
+     * @brief Construct a new bloco object
+     * 
+     */
+        bloco();
 
-/**
- * @brief variavel que guarda o valor salvo na pilha
- * 
- */
-    ItemType item;
+    /**
+     * @brief variavel que guarda o valor salvo na pilha
+     * 
+     */
+        ItemType item;
 
-/**
- * @brief ponteiro para fazer a pilha encadeada
- * 
- */
-    bloco * anterior;
+    /**
+     * @brief ponteiro para fazer a pilha encadeada
+     * 
+     */
+        bloco * anterior;
+    };
+    
+    /**
+     * @brief Classe da pilha, e seus métodos para fazer a pilha funcionar
+     * 
+     */
+    class PilhaEncadeada {
+    private:
+
+    /**
+     * @brief ponteiro para a classe bloco, criada logo a cima
+     * 
+     */
+        bloco * blocoTopo;
+    public:
+
+    /**
+     * @brief Construct a new Pilha Encadeada object
+     * 
+     */
+        PilhaEncadeada();
+
+    /**
+     * @brief colocar na pilha - push = (empilhar novo elemento)
+     * 
+     * @return ItemType 
+     */
+        ItemType push(ItemType);
+
+    /**
+     * @brief remover elemento (que está no topo) 
+     * 
+     * @return ItemType 
+     */
+        ItemType pop();
+
+    /**
+     * @brief verifica se a pilha está vazia
+     * 
+     * @return true 
+     * @return false 
+     */
+        bool isEmpty();
+
+    /**
+     * @brief 
+     * 
+     * @return true 
+     * @return false 
+     */
+        bool isFull();
+
+    /**
+     * @brief pegar elemento que está no topo - obter/pegar
+     * 
+     * @return ItemType 
+     */
+        ItemType topo();
+
+    /**
+     * @brief retorna o tamanho da pilha
+     * 
+     * @return int 
+     */
+        int tamanho();
+
+    /**
+     * @brief retorna todos os itens da pilha
+     * 
+     */
+        void displayItems();
+
+    /**
+     * @brief Destroy the Pilha Encadeada object
+     * 
+     */
+        ~PilhaEncadeada();
 };
- 
-/**
- * @brief Classe da pilha, e seus métodos para fazer a pilha funcionar
- * 
- */
-class PilhaEncadeada{
-private:
-
-/**
- * @brief ponteiro para a classe bloco, criada logo a cima
- * 
- */
-    bloco * blocoTopo;
-public:
-
-/**
- * @brief Construct a new Pilha Encadeada object
- * 
- */
-    PilhaEncadeada();
-
-/**
- * @brief colocar na pilha - push = (empilhar novo elemento)
- * 
- * @return ItemType 
- */
-    ItemType push(ItemType);
-
-/**
- * @brief remover elemento (que está no topo) 
- * 
- * @return ItemType 
- */
-    ItemType pop();
-
-/**
- * @brief verifica se a pilha está vazia
- * 
- * @return true 
- * @return false 
- */
-    bool isEmpty(); // 
-
-/**
- * @brief 
- * 
- * @return true 
- * @return false 
- */
-    bool isFull();
-
-/**
- * @brief pegar elemento que está no topo - obter/pegar
- * 
- * @return ItemType 
- */
-    ItemType topo();
-
-/**
- * @brief retorna o tamanho da pilha
- * 
- * @return int 
- */
-    int tamanho();
-
-/**
- * @brief retorna todos os itens da pilha
- * 
- */
-    void displayItems();
-
-/**
- * @brief Destroy the Pilha Encadeada object
- * 
- */
-    ~PilhaEncadeada();
-};
- 
 #endif // PILHAENCADEADA_H

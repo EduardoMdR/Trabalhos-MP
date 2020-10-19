@@ -1,6 +1,16 @@
+/**
+ * @file testa_pilha.cpp
+ * @author Eduardo Marques dos reis (190012358)
+ * @brief 
+ * @version 0.1
+ * @date 2020-10-19
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #ifndef PILHA_H
 #define PILHA_H
- 
 #include <cstdlib>
 #include <iostream>
 
@@ -22,7 +32,7 @@ using namespace std;
  * @brief Classe da pilha, e seus métodos para fazer a pilha funcionar
  * 
  */
-class PilhaVetor{
+class PilhaVetor {
   private:
 
 /**
@@ -100,5 +110,4 @@ class PilhaVetor{
  */
     ~PilhaVetor();
 };
- 
 #endif // PILHA_H

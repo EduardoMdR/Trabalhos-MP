@@ -20,7 +20,18 @@ CC_FLAGS=-c         \
          -W         \
          -Wall      \
          -ansi      \
-         -pedantic
+         -pedantic  
+
+				# utilizando gtest
+				#  -lpthread  
+				#  -libgtest.a
+
+#utilizando gcov
+#          -ftest-coverage 
+# 				 -fprofile-arcs
+
+# LD_FLAGS=-lgcov 
+#          --coverage
  
 # Command used at clean target
 RM = rm -rf
@@ -51,6 +62,7 @@ objFolder:
  
 clean:
 	@ $(RM) ./objects/*.o $(PROJ_NAME) *~
+	@ $(RM) ./objects/*.gcno $(PROJ_NAME) *~
 	@ rmdir objects
  
 .PHONY: all clean

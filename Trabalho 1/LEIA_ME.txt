@@ -18,3 +18,11 @@ outros aspectos.
 
 # O versionamento de projeto está ocorrendo em:
 https://github.com/EduardoMdR/Trabalhos-MP/tree/main/Trabalho%201
+
+# Nota de esclarecimento.
+Diversas foram pedidas no trabalho, e algumas delas não se teve um exemplo tão concreto
+para saber implementar (como os teste, que por algum motivo não consigui fazer rodar com o makefile)
+graças a isso, tive que tomar outras medidas, como a implementação de testes manuais, e graças a isso
+é possivel perceber que não está acontecendo nenhum erro no programa;
+O gcov foi outro programa que deu conflito com o makefile e não consegui resolver, (gtest e e cog estão comentados
+no makefila, da maneira que seria correta para implementalos)
