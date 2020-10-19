@@ -14,3 +14,7 @@ outros aspectos.
 - ./printy          # executar o programa
 
 - make clean        # limpa os arquivo .o
+
+
+# O versionamento de projeto está ocorrendo em:
+https://github.com/EduardoMdR/Trabalhos-MP/tree/main/Trabalho%201

@@ -2,11 +2,20 @@
 
 using namespace std;
 
-// criando pilha
+/**
+ * @brief Construct a new Pilha Vetor:: Pilha Vetor object
+ * 
+ */
 PilhaVetor::PilhaVetor(){
     top=-1;
 }
 
+/**
+ * @brief colocar na pilha - push = (empilhar novo elemento)
+ * 
+ * @param n 
+ * @return ItemType 
+ */
 ItemType PilhaVetor::push(ItemType n){
     // preciso verificar se a pilha está cheia
     if(isFull()){
@@ -17,6 +26,11 @@ ItemType PilhaVetor::push(ItemType n){
     return n;
 }
 
+/**
+ * @brief remover elemento (que está no topo) 
+ * 
+ * @return ItemType 
+ */
 ItemType PilhaVetor::pop(){
     ItemType temp;   // variavel temporaria
     // verifica se a pilha está vazia
@@ -27,6 +41,12 @@ ItemType PilhaVetor::pop(){
     return temp;
 }
 
+/**
+ * @brief verifica se a pilha está vazia
+ * 
+ * @return true 
+ * @return false 
+ */
 bool PilhaVetor::isEmpty(){
     if(top==-1)
         return 1;
@@ -34,6 +54,12 @@ bool PilhaVetor::isEmpty(){
         return 0;   
 }
 
+/**
+ * @brief verifica se apilha está cheia
+ * 
+ * @return true 
+ * @return false 
+ */
 bool PilhaVetor::isFull(){
     if(top==(SIZE-1))
         return 1;
@@ -41,6 +67,10 @@ bool PilhaVetor::isFull(){
         return 0;
 }
 
+/**
+ * @brief retorna todos os itens da pilha
+ * 
+ */
 void PilhaVetor::displayItems(){
     if(isEmpty())
         cout << "";
@@ -51,6 +81,11 @@ void PilhaVetor::displayItems(){
     cout << endl;
 }
 
+/**
+ * @brief pegar elemento que está no topo - obter/pegar
+ * 
+ * @return ItemType 
+ */
 ItemType PilhaVetor::topo(){
     ItemType temp;   // variavel temporaria
     // verifica se a pilha está vazia
@@ -60,6 +95,11 @@ ItemType PilhaVetor::topo(){
     return temp;
 }
 
+/**
+ * @brief retorna todos os itens da pilha
+ * 
+ * @return int 
+ */
 int PilhaVetor::tamanho(){
     // verifica se a pilha está vazia
     if(isEmpty())
@@ -70,6 +110,10 @@ int PilhaVetor::tamanho(){
     return temp;
 }
 
+/**
+ * @brief Destroy the Pilha Vetor:: Pilha Vetor object
+ * 
+ */
 PilhaVetor::~PilhaVetor(){
     // delete top;
 }
