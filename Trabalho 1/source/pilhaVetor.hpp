@@ -13,7 +13,7 @@ class PilhaVetor{
   private:
     ItemType num[SIZE];  // defini o tamanho padao da pilha como 10
     int top;
-    PilhaVetor * anterior;
+    // PilhaVetor * anterior;
   public:
     PilhaVetor();    //defualt constructor
     ItemType push(ItemType);

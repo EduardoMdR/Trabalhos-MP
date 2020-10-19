@@ -3,7 +3,7 @@
 #include "pilhaEncadeada.hpp"
 
 #ifndef StackType
-#define StackType PilhaVetor
+#define StackType PilhaEncadeada
 #endif //StackType
 // #include "gtest/gtest.h"
 
@@ -128,39 +128,39 @@ int main()
           cout  << "Número no topo de sua lista é : " << temp << endl;
       break;
 
-      case 4 :
-        int temp2; // vai receber o tamanho da pilha
-        temp2 = teste.tamanho();
-        if (teste.isEmpty())
-          cout<<"A pilha está vazia!! \n"<<endl;
-        else
-          cout  << "O tamanho de sua pilha é de : " << temp2 << endl;
-      break;
+      // case 4 :
+      //   int temp2; // vai receber o tamanho da pilha
+      //   temp2 = teste.tamanho();
+      //   if (teste.isEmpty())
+      //     cout<<"A pilha está vazia!! \n"<<endl;
+      //   else
+      //     cout  << "O tamanho de sua pilha é de : " << temp2 << endl;
+      // break;
 
-      case 5 :
-        // setSize
-      break;
+      // case 5 :
+      //   // setSize
+      // break;
 
-      case 6 :
-        if (teste.isFull())
-          cout<<"A Pilha está cheia.\n\n"<<endl;
-        else
-          cout<<"A Pilha não está cheia.\n\n"<<endl;
-      break;
+      // case 6 :
+      //   if (teste.isFull())
+      //     cout<<"A Pilha está cheia.\n\n"<<endl;
+      //   else
+      //     cout<<"A Pilha não está cheia.\n\n"<<endl;
+      // break;
 
-      case 7 :
-        if (teste.isEmpty())
-          cout<<"A Pilha está vazia.\n\n"<<endl;
-        else
-          cout<<"A Pilha não está vazia.\n\n"<<endl;
-      break;
+      // case 7 :
+      //   if (teste.isEmpty())
+      //     cout<<"A Pilha está vazia.\n\n"<<endl;
+      //   else
+      //     cout<<"A Pilha não está vazia.\n\n"<<endl;
+      // break;
 
-      case 8 :
-        if (teste.isEmpty())
-          cout<<"A Pilha está vazia.\n\n"<<endl;
-        else
-          teste.displayItems();
-      break;
+      // case 8 :
+      //   if (teste.isEmpty())
+      //     cout<<"A Pilha está vazia.\n\n"<<endl;
+      //   else
+      //     teste.displayItems();
+      // break;
 
       default :
         cout << "Número invalido" << endl;
