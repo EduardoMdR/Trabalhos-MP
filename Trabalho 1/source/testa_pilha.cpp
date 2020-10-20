@@ -143,7 +143,7 @@ int main()
  * 
  */
   cout << " Pilha criada " << endl;
-  StackType teste;
+  StackType teste(10);
 
   int operacao;
   ItemType valor, temp;

@@ -24,32 +24,6 @@ using namespace std;
  * 
  */
 #define ItemType int
-
-/**
- * @brief Classe Bloco, é utilizada para faciliatar a construção da pilha
- * 
- */
-class bloco {
-    public:
-
-    /**
-     * @brief Construct a new bloco object
-     * 
-     */
-        bloco();
-
-    /**
-     * @brief variavel que guarda o valor salvo na pilha
-     * 
-     */
-        ItemType item;
-
-    /**
-     * @brief ponteiro para fazer a pilha encadeada
-     * 
-     */
-        bloco * anterior;
-    };
     
     /**
      * @brief Classe da pilha, e seus métodos para fazer a pilha funcionar
@@ -62,14 +36,16 @@ class bloco {
      * @brief ponteiro para a classe bloco, criada logo a cima
      * 
      */
-        bloco * blocoTopo;
+        ItemType *arr;
+        int top;
+        int capacity;
     public:
 
     /**
      * @brief Construct a new Pilha Encadeada object
      * 
      */
-        PilhaEncadeada();
+        PilhaEncadeada(int);
 
     /**
      * @brief colocar na pilha - push = (empilhar novo elemento)

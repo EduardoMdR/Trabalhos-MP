@@ -17,7 +17,7 @@ using namespace std;
  * @brief Construct a new Pilha Vetor:: Pilha Vetor object
  * 
  */
-PilhaVetor::PilhaVetor(){
+PilhaVetor::PilhaVetor(int valor){
     top=-1;
 }
 

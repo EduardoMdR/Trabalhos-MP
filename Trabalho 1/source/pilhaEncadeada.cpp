@@ -12,19 +12,13 @@
 #include "pilhaEncadeada.hpp"
 
 /**
- * @brief Construct a new bloco::bloco object
- * 
- */
-bloco::bloco(){
- 
-}
-
-/**
  * @brief Construct a new Pilha Encadeada:: Pilha Encadeada object
  * 
  */
-PilhaEncadeada::PilhaEncadeada(){
-    blocoTopo=NULL;
+PilhaEncadeada::PilhaEncadeada(int size){
+    arr = new int[size];
+	capacity = size;
+	top = -1;
 }
 
 /**
@@ -34,15 +28,11 @@ PilhaEncadeada::PilhaEncadeada(){
  * @return ItemType 
  */
 ItemType PilhaEncadeada::push(ItemType valor){
-    bloco * novoBloco = (bloco * ) malloc(sizeof(bloco));
-    if(novoBloco==NULL){
-        return 0;
-    }else{
-        novoBloco->item = valor;
-        novoBloco->anterior = blocoTopo;
-        blocoTopo = novoBloco;
-        return blocoTopo->item;
-    }
+	if (isFull()){
+		return 0;
+	}
+	arr[++top] = valor;
+    return valor;
 }
 
 /**
@@ -53,13 +43,10 @@ ItemType PilhaEncadeada::push(ItemType valor){
  * @return ItemType 
  */
 ItemType PilhaEncadeada::topo(){
-  ItemType valor;
-    if(blocoTopo->item==NULL){
-        return 0;
-    }else{
-        valor = blocoTopo->item;
-        return valor;
-    }
+	if (!isEmpty())
+		return arr[top];
+	else
+		return 0;
 }
 
 /**
@@ -69,7 +56,7 @@ ItemType PilhaEncadeada::topo(){
  * @return false 
  */
 bool PilhaEncadeada::isEmpty(){
-    return 0;
+	return top == -1;	// or return size() == 0;
 }
 
 /**
@@ -79,7 +66,7 @@ bool PilhaEncadeada::isEmpty(){
  * @return false 
  */
 bool PilhaEncadeada::isFull(){
-    return 0;
+    return top == capacity - 1;	// or return size() == capacity;
 }
 
 /**
@@ -88,18 +75,12 @@ bool PilhaEncadeada::isFull(){
  * @return ItemType 
  */
 ItemType PilhaEncadeada::pop(){
-    ItemType valor;
-    if(blocoTopo==NULL){
+	// check for stack underflow
+	if (isEmpty()){
         return 0;
-    }else{
-        bloco * temp;
-        valor = blocoTopo->item;
-        temp = blocoTopo;
-        blocoTopo = blocoTopo->anterior;
-        temp = NULL;
-        free(temp);
-        return valor;
-    }
+	}
+	// decrease stack size by 1 and (optionally) return the popped element
+	return arr[top--];
 }
 
 /**
@@ -108,25 +89,26 @@ ItemType PilhaEncadeada::pop(){
  * @return int 
  */
 int PilhaEncadeada::tamanho(){
-    if(blocoTopo==NULL){
-        return 0;
-    }else{
-
-    }
+    return top + 1;
 }
 
+/**
+ * @brief retorna todos os itens da pilha
+ * 
+ */
+void PilhaEncadeada::displayItems(){
+    if(isEmpty())
+        cout << "";
+    int i;  //for loop
+    cout << "Sua pilha : ";
+    for(i = (top); i >= 0 ; i--)
+        cout << arr[i] << " ";
+    cout << endl;
+}
 /**
  * @brief Destroy the Pilha Encadeada:: Pilha Encadeada object
  * 
  */
 PilhaEncadeada::~PilhaEncadeada(){
-    if(blocoTopo!=NULL){
-        bloco * temp;
-        while(blocoTopo!=NULL){
-            temp = blocoTopo;
-            blocoTopo = blocoTopo->anterior;
-            temp = NULL;
-            free(temp);
-        }
-    }
+    delete[] arr;
 }

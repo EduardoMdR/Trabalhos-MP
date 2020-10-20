@@ -48,7 +48,7 @@ class PilhaVetor {
  * @brief Construct a new Pilha Vetor object
  * 
  */
-    PilhaVetor();    //defualt constructor
+    PilhaVetor(int);    //defualt constructor
 
 /**
  * @brief colocar na pilha - push = (empilhar novo elemento)
